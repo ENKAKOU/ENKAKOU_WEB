@@ -3,6 +3,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import JDBCUtils;
+
 
 public class UserDao {
 	
@@ -58,7 +60,8 @@ public class UserDao {
 			// 创建执行SQL语句的对象：
 			stmt = conn.createStatement();
 			// 编写SQL语句:
-			String sql = "select * from user where username = '"+username+"' and password = '"+password+"'";
+			String sql = "select * from user where username = '" + username +
+					"' and password = '"+password+"'";
 			// 执行SQL:
 			rs = stmt.executeQuery(sql);
 			if(rs.next()){
