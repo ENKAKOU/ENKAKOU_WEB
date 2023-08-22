@@ -3,7 +3,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import com.itheima.jdbc.utils.JDBCUtils;
 
 public class UserDao {
 	
