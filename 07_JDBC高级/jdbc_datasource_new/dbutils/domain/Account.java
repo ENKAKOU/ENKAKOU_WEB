@@ -1,4 +1,4 @@
-package com.itheima.dbutils.domain;
+package dbutils.domain;
 
 public class Account {
 	private Integer id;
