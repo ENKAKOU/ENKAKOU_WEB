@@ -1,4 +1,4 @@
-package com.itheima.jdbc.utils;
+package jdbc.utils;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,11 +9,6 @@ import javax.sql.DataSource;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-/**
- * JDBC的工具类
- * @author jt
- *
- */
 public class JDBCUtils2 {
 	// 创建一个连接池：但是这个连接池只需要创建一次即可。
 	private static final ComboPooledDataSource dataSource = new ComboPooledDataSource();
