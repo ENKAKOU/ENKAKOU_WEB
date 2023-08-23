@@ -1,26 +1,16 @@
-package com.itheima.datasource.demo1;
+package datasource.demo1;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 import javax.sql.DataSource;
 
 import org.junit.Test;
 
 import com.itheima.jdbc.utils.JDBCUtils;
 
-/**
- * 自定义连接池的测试类
- * @author jt
- *
- */
 public class DataSourceDemo1 {
 
-	@Test
-	/**
-	 * 测试自定义连接池
-	 */
 	public void demo1(){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
