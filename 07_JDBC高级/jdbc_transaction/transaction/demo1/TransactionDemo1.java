@@ -1,4 +1,4 @@
-package com.itheima.transaction.demo1;
+package transaction.demo1;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,14 +8,7 @@ import org.junit.Test;
 
 import com.itheima.jdbc.utils.JDBCUtils;
 
-/**
- * 事务管理的测试类：
- * @author jt
- *
- */
 public class TransactionDemo1 {
-
-	@Test
 	/**
 	 * 完成转账的案例
 	 */
