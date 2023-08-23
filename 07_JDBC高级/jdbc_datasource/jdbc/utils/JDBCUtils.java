@@ -1,4 +1,4 @@
-package jdbc;
+package com.itheima.jdbc.utils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,6 +10,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
+/**
+ * JDBC的工具类
+ * @author jt
+ *
+ */
 public class JDBCUtils {
 	private static final String driverClassName;
 	private static final String url;
@@ -33,8 +38,9 @@ public class JDBCUtils {
 		password=properties.getProperty("password");
 	}
 
-
-//   注册驱动的方法
+	/**
+	 * 注册驱动的方法
+	 */
 	public static void loadDriver(){
 		try {
 			Class.forName(driverClassName);
@@ -43,8 +49,9 @@ public class JDBCUtils {
 		}
 	}
 	
-
-//   获得连接的方法
+	/**
+	 * 获得连接的方法
+	 */
 	public static Connection getConnection(){
 		Connection conn = null;
 		try{
@@ -57,9 +64,10 @@ public class JDBCUtils {
 		}
 		return conn;
 	}
-
-
-//   释放资源的方法
+	
+	/**
+	 * 释放资源的方法
+	 */
 	public static void release(Statement stmt,Connection conn){
 		if(stmt != null){
 			try {

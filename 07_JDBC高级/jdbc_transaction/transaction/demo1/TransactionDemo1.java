@@ -1,14 +1,24 @@
-package transaction;
+package com.itheima.transaction.demo1;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import org.junit.Test;
+
 import com.itheima.jdbc.utils.JDBCUtils;
 
+/**
+ * 事务管理的测试类：
+ * @author jt
+ *
+ */
 public class TransactionDemo1 {
 
-//   完成转账的案例
+	@Test
+	/**
+	 * 完成转账的案例
+	 */
 	public void demo1(){
 		Connection conn = null;
 		PreparedStatement pstmt  = null;
