@@ -1,4 +1,4 @@
-package com.itheima.datasource.demo1;
+package datasource.demo1;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -14,14 +14,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.itheima.jdbc.utils.JDBCUtils;
 
-/**
- * 开源连接池Druid的使用
- * @author jt
- *
- */
 public class DruidDemo1 {
-
-	@Test
 	/**
 	 * Druid的使用:
 	 * * 配置方式设置参数
@@ -57,8 +50,7 @@ public class DruidDemo1 {
 			JDBCUtils.release(rs, pstmt, conn);
 		}
 	}
-	
-	@Test
+
 	/**
 	 * Druid的使用:
 	 * * 手动设置参数的方式
