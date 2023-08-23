@@ -1,4 +1,4 @@
-package com.itheima.datasource.demo3;
+package datasource.demo3;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,13 +9,8 @@ import org.junit.Test;
 import com.itheima.jdbc.utils.JDBCUtils;
 import com.itheima.jdbc.utils.JDBCUtils2;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-/**
- * 工具类测试
- * @author jt
- *
- */
+
 public class C3P0Demo2 {
-	@Test
 	/**
 	 * 使用新的工具类的测试：
 	 */
