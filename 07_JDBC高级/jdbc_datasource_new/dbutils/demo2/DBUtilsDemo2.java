@@ -1,4 +1,4 @@
-package com.itheima.dbutils.demo2;
+package dbutils.demo2;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +19,6 @@ import com.itheima.jdbc.utils.JDBCUtils2;
  */
 public class DBUtilsDemo2 {
 
-	@Test
 	/**
 	 * 查询一条记录的操作
 	 */
@@ -43,8 +42,7 @@ public class DBUtilsDemo2 {
 		}, 1);
 		System.out.println(account);
 	}
-	
-	@Test
+
 	/**
 	 * 查询多条记录
 	 */
