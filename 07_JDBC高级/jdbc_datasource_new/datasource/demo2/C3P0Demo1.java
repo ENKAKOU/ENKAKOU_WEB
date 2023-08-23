@@ -1,4 +1,4 @@
-package com.itheima.datasource.demo2;
+package datasource.demo2;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,13 +9,7 @@ import org.junit.Test;
 import com.itheima.jdbc.utils.JDBCUtils;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-/**
- * C3P0连接池的测试
- * @author jt
- *
- */
 public class C3P0Demo1 {
-	@Test
 	/**
 	 * 采用配置文件的方式：
 	 */
@@ -45,7 +39,6 @@ public class C3P0Demo1 {
 		}
 	}
 
-	@Test
 	/**
 	 * 手动设置参数的方式:
 	 */
