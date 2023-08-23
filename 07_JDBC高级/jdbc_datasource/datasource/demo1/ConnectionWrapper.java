@@ -1,4 +1,4 @@
-package com.itheima.datasource.demo1;
+package datasource.demo1;
 
 import java.sql.Array;
 import java.sql.Blob;
@@ -18,11 +18,7 @@ import java.sql.Struct;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
-/**
- * 模板类
- * @author jt
- *
- */
+
 public class ConnectionWrapper implements Connection {
 
 	private Connection conn;
