@@ -1,4 +1,4 @@
-package com.itheima.servlet.demo2;
+package com.demo2;
 
 import java.io.IOException;
 
