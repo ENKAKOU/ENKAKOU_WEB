@@ -1,4 +1,4 @@
-package com.itheima.jdbc.utils;
+package jdbc.utils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,11 +10,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-/**
- * JDBC的工具类
- * @author jt
- *
- */
 public class JDBCUtils {
 	private static final String driverClassName;
 	private static final String url;
