@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class RequestDemo3 extends HttpServlet {
 	/**
-	 * 演示get方式处理中文乱码
+	 *get方式处理中文乱码
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 接收数据：
@@ -34,7 +34,7 @@ public class RequestDemo3 extends HttpServlet {
 	}
 
 	/**
-	 * 演示post方式处理中文乱码
+	 * post方式处理中文乱码
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
