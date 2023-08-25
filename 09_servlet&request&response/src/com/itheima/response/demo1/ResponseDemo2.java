@@ -1,4 +1,4 @@
-package com.demo3;
+package com.itheima.response.demo1;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 使用Eclipse进行开发Servlet;  不用在web.xml中修改，自动完成了Servlet的配置
+ * 定向的页面
  */
-public class ServletDemo2 extends HttpServlet {
+public class ResponseDemo2 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().println("ResponseDemo2...");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
