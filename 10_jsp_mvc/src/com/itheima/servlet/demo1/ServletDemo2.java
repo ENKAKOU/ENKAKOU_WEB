@@ -10,7 +10,6 @@ import javax.servlet.ServletResponse;
 /**
  * Servlet的启动时加载
  * @author jt
- *
  */
 public class ServletDemo2 implements Servlet{
 
