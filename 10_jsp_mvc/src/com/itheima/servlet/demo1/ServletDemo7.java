@@ -6,9 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * ServletContext的域对象的演示
- */
+// ServletContext的域对象的演示
 public class ServletDemo7 extends HttpServlet {
 
 	@Override
