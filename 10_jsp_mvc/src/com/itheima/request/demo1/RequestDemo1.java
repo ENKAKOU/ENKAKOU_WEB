@@ -6,9 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Request对象获得客户机信息
- */
+// Request对象获得客户机信息
 public class RequestDemo1 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
