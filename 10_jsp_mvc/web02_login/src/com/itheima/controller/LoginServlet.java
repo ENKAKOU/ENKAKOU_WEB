@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.itheima.domain.User;
 import com.itheima.model.UserModel;
 
-/**
- * 登录的Servlet的编写
- */
+// 登录的Servlet的编写
 public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
