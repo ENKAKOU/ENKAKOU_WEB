@@ -11,11 +11,13 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ServletDemo1 extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+	                                             throws ServletException, IOException {
 		response.getWriter().println("Servlet Demo1...");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	                                             throws ServletException, IOException {
 		doGet(request, response);
 	}
 
