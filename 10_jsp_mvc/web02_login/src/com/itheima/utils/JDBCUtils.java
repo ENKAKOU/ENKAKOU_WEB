@@ -26,9 +26,7 @@ public class JDBCUtils {
 		return dataSource.getConnection();
 	}
 	
-	/**
-	 * 获得连接池:
-	 */
+	// 获得连接池:
 	public static DataSource getDataSource(){
 		return dataSource;
 	}
