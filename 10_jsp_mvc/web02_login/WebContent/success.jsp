@@ -11,8 +11,7 @@
 <h1>登录成功的页面！</h1>
 <%
     Integer count = 0;
-    // 判断，如果ServletContext中有值，获取并显示：
-    if(this.getServletContext().getAttribute("count")!=null){
+    if(this.getServletContext().getAttribute("count")!=null) {           // 判断，如果ServletContext中有值，获取并显示
         count = (Integer)this.getServletContext().getAttribute("count");
     }
 %>
