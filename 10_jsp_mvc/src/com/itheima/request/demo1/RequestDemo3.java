@@ -9,13 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Request接收中文数据
- */
+// Request接收中文数据
 public class RequestDemo3 extends HttpServlet {
-	/**
-	 * 演示get方式处理中文乱码
-	 */
+
+	// get方式处理中文乱码
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 接收数据：
 		// request.setCharacterEncoding("UTF-8");
@@ -32,10 +29,8 @@ public class RequestDemo3 extends HttpServlet {
 		String value = new String(name.getBytes("ISO-8859-1"),"UTF-8");
 		System.out.println("姓名:"+value);
 	}
-
-	/**
-	 * 演示post方式处理中文乱码
-	 */
+	
+	//  演示post方式处理中文乱码
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		// 接收数据：
