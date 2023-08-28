@@ -9,14 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Response响应中文的处理
- */
+// Response响应中文的处理
 public class ResponseDemo3 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		test2(response);
 	}
+	
 	/**
 	 * 使用字符流输出中文
 	 * @param response
@@ -33,6 +32,7 @@ public class ResponseDemo3 extends HttpServlet {
 		// 会不会产生乱码
 		response.getWriter().println("中文");
 	}
+	
 	/**
 	 * 使用字节流输出中文
 	 * @param response
