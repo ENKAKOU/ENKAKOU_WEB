@@ -2,7 +2,6 @@ package com.itheima.domain;
 /**
  * 用于封装数据的JavaBean
  * @author jt
- *
  */
 public class User {
 	private Integer uid;
