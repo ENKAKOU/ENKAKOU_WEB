@@ -11,7 +11,6 @@ import com.itheima.utils.JDBCUtils;
 /**
  * 处理数据的Java类
  * @author jt
- *
  */
 public class StudentModel {
 	// 查询所有学生信息的方法：
@@ -20,5 +19,4 @@ public class StudentModel {
 		List<Student> list = queryRunner.query("select * from student", new BeanListHandler<Student>(Student.class));
 		return list;
 	}
-
 }
