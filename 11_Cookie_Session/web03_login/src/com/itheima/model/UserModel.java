@@ -10,15 +10,11 @@ import com.itheima.utils.JDBCUtils;
 
 /**
  * 处理数据的JavaBean
- * 
  * @author jt
- *
  */
 public class UserModel {
-
 	/**
 	 * 处理用户登录的方法：
-	 * 
 	 * @param user
 	 * @return
 	 * @throws SQLException
@@ -30,5 +26,4 @@ public class UserModel {
 				new BeanHandler<User>(User.class), user.getUsername(), user.getPassword());
 		return existUser;
 	}
-
 }
