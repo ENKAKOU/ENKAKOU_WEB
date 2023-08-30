@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.itheima.domain.Student;
 import com.itheima.model.StudentModel;
 
-/**
- * 查询学生信息的Servlet
- */
+// 查询学生信息的Servlet
 public class StudentServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
