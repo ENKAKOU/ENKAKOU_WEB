@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.itheima.utils.CookieUtils;
 
-/**
- * 记录用户上次访问时间的Servlet
- */
+// 记录用户上次访问时间的Servlet
 public class VisitServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
