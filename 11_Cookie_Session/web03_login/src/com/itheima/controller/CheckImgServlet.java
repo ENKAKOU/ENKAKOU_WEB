@@ -23,7 +23,6 @@ public class CheckImgServlet extends HttpServlet {
 		// response.setHeader("Cache-Control", "no-cache");
 		// response.setHeader("Pragma", "no-cache");
 		// response.setDateHeader("Expires", -1);
-
 		int width = 120;
 		int height = 30;
 
@@ -32,7 +31,7 @@ public class CheckImgServlet extends HttpServlet {
 				BufferedImage.TYPE_INT_RGB);
 
 		// 步骤二 图片绘制背景颜色 ---通过绘图对象
-		Graphics graphics = bufferedImage.getGraphics();// 得到画图对象 --- 画笔
+		Graphics graphics = bufferedImage.getGraphics();                // 得到画图对象 --- 画笔
 		// 绘制任何图形之前 都必须指定一个颜色
 		graphics.setColor(getRandColor(200, 250));
 		graphics.fillRect(0, 0, width, height);
@@ -41,10 +40,8 @@ public class CheckImgServlet extends HttpServlet {
 		graphics.setColor(Color.WHITE);
 		graphics.drawRect(0, 0, width - 1, height - 1);
 
-		// 步骤四 四个随机数字
-		Graphics2D graphics2d = (Graphics2D) graphics;
-		// 设置输出字体
-		graphics2d.setFont(new Font("宋体", Font.BOLD, 18));
+		Graphics2D graphics2d = (Graphics2D) graphics;                  // 步骤四 四个随机数字
+		graphics2d.setFont(new Font("宋体", Font.BOLD, 18));		// 设置输出字体
 
 		String words =
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
@@ -112,19 +109,15 @@ public class CheckImgServlet extends HttpServlet {
 			// 随机颜色
 			graphics2d.setColor(new Color(20 + random.nextInt(110), 20 + random
 					.nextInt(110), 20 + random.nextInt(110)));
-			// 旋转 -30 --- 30度
-			int jiaodu = random.nextInt(60) - 30;
-			// 换算弧度
-			double theta = jiaodu * Math.PI / 180;
+
+			int jiaodu = random.nextInt(60) - 30;			// 旋转 -30 --- 30度
+			double theta = jiaodu * Math.PI / 180;			// 换算弧度
 
 			// 生成一个随机数字
-			int index = random.nextInt(words.length()); // 生成随机数 0 到 length - 1
-			// 获得字母数字
-			char c = words.charAt(index);
-			
+			int index = random.nextInt(words.length());             // 生成随机数 0 到 length - 1
+			char c = words.charAt(index);			        // 获得字母数字
 			// 将随机产生的字符存入到字符串中:
 			buffer.append(c);
-			
 			// 将c 输出到图片
 			graphics2d.rotate(theta, x, 20);
 			graphics2d.drawString(String.valueOf(c), x, 20);
@@ -132,10 +125,8 @@ public class CheckImgServlet extends HttpServlet {
 			x += 30;
 		}
 		
-		// 将buffer转成字符串对象：
-		String checkcode = buffer.toString();
-		// 将其存入到session中
-		request.getSession().setAttribute("checkcode", checkcode);
+		String checkcode = buffer.toString();		// 将buffer转成字符串对象：
+		request.getSession().setAttribute("checkcode", checkcode);		// 将其存入到session中
 		// 步骤五 绘制干扰线
 		graphics.setColor(getRandColor(160, 200));
 		int x1;
@@ -151,11 +142,10 @@ public class CheckImgServlet extends HttpServlet {
 		}
 
 		// 将上面图片输出到浏览器 ImageIO
-		graphics.dispose();// 释放资源
+		graphics.dispose();            // 释放资源
 		ImageIO.write(bufferedImage, "jpg", response.getOutputStream());
 
 	}
-
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -164,7 +154,6 @@ public class CheckImgServlet extends HttpServlet {
 
 	/**
 	 * 取其某一范围的color
-	 * 
 	 * @param fc
 	 *            int 范围参数1
 	 * @param bc
@@ -172,8 +161,8 @@ public class CheckImgServlet extends HttpServlet {
 	 * @return Color
 	 */
 	private Color getRandColor(int fc, int bc) {
-		// 取其随机颜色
-		Random random = new Random();
+
+		Random random = new Random();		// 取其随机颜色
 		if (fc > 255) {
 			fc = 255;
 		}
