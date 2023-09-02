@@ -8,7 +8,8 @@
     <script type="text/javascript">
         function add(){
             var div1Element = document.getElementById("div1");     // 获得id为div1的元素:
-            div1Element.innerHTML += "<div><input type='file' name='upload'/><input type='button' value='删除' onclick='del(this)'></div>";
+            div1Element.innerHTML += "<div><input type='file' name='upload'/>" +
+                "<input type='button' value='删除' onclick='del(this)'></div>";
         }
 
         function del(who){
