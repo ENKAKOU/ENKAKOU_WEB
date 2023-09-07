@@ -15,10 +15,25 @@
                 //2.创建四个td,向td中添加内容
                 var td1=$("<td></td>");
                 td1.append($("#username").val());
-                
+                var td2=$("<td></td>");
+                td2.append($("#phone").val());
+                var td3=$("<td></td>");
+                td3.append($("#email").val());
+                var td4=$("<td></td>");
+                //创建一个链接
+                var a=$("<a href='javascript:void(0)'>删除</a>");
+                td4.append(a);
+                //完成删除功能
+                a.click(function(){
+                    //$(this).parent().parent().remove();
+                    $(this).parents("tr").remove();
+                });
 
+                //3.将td添加到tr中
+                tr.append(td1).append(td2).append(td3).append(td4);
+                //4.将tr添加到table中
+                $("#tab").append(tr);
             });
-
         });
     </script>
 </head>
