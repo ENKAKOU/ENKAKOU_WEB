@@ -2,7 +2,6 @@ package jedisTest;
 
 import redis.clients.jedis.Jedis;
 
-//快速入门
 public class JedisDemo1 {
 
 	public static void main(String[] args) {
