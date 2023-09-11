@@ -10,29 +10,29 @@ import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
 
-//hash操作
-public class JedisDemo4 {
+
+public class JedisDemo4 {                     //hash操作
 	Jedis jedis;
 
 	@Before
 	public void createJedis() {
 		jedis = new Jedis("192.168.19.128");
-		// 设置密码
-		jedis.auth("admin");
+
+		jedis.auth("admin");          //设置密码
 	}
 
-	// 演示hset hget
+
 	@Test
-	public void test1() {
+	public void test1() {	              //hset hget
 		jedis.hset("user", "username", "tom");
 
 		String value = jedis.hget("user", "username");
 		System.out.println(value);
 	}
 
-	// 演示hmset hmget
+
 	@Test
-	public void test2() {
+	public void test2() {	              //hmset hmget
 		Map<String, String> hash = new HashMap<String, String>();
 		hash.put("password", "123");
 		hash.put("sex", "male");
@@ -42,9 +42,9 @@ public class JedisDemo4 {
 		System.out.println(values);
 	}
 	
-	//演示  hgetall hkeys  kvals
+
 	@Test
-	public void test3(){
+	public void test3(){	              //hgetall hkeys  kvals
 		Map<String, String> map = jedis.hgetAll("user");
 		for(String key:map.keySet()){
 			System.out.println(key+"  "+map.get(key));
@@ -57,9 +57,9 @@ public class JedisDemo4 {
 		System.out.println(values);
 	}
 	
-//	演示hdel
+
 	@Test
-	public void test4(){
+	public void test4(){	              //hdel
 		jedis.hdel("user", "username","password");
 		Map<String, String> map = jedis.hgetAll("user");
 		for(String key:map.keySet()){
