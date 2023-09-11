@@ -15,21 +15,20 @@ public class JedisDemo3 {
 	@Before
 	public void createJedis() {
 		jedis = new Jedis("192.168.19.128");
-		// 设置密码
-		jedis.auth("admin");
+		jedis.auth("admin");	                  // 设置密码
 	}
 
-	// 演示lpush lrange
+	
 	@Test
-	public void test1() {
+	public void test1() {	                           //lpush lrange
 		jedis.lpush("names", "tom", "james", "张三", "李四");
 		List<String> names = jedis.lrange("names", 0, -1);
 		System.out.println(names);
 	}
 
-	// lset
+
 	@Test
-	public void test2() {
+	public void test2() {	                           // lset
 		// jedis.lset("names", 1, "王五");
 		// List<String> names = jedis.lrange("names", 0, -1);
 		// System.out.println(names);
@@ -38,18 +37,18 @@ public class JedisDemo3 {
 		System.out.println(value);
 	}
 
-	// linsert
+
 	@Test
-	public void test3() {
+	public void test3() {	                           // linsert
 		jedis.linsert("names", LIST_POSITION.BEFORE, "james", "fox");
 
 		List<String> names = jedis.lrange("names", 0, -1);
 		System.out.println(names);
 	}
 	
-	// lrem
+
 	@Test
-	public void test4(){
+	public void test4(){	                           // lrem
 		jedis.lrem("names", 1, "tom");
 		List<String> names = jedis.lrange("names", 0, -1);
 		System.out.println(names);
