@@ -10,15 +10,13 @@ import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
 
-//set操作
-public class JedisDemo5 {
+public class JedisDemo5 {                   //set操作
 	Jedis jedis;
 
 	@Before
 	public void createJedis() {
 		jedis = new Jedis("192.168.19.128");
-		// 设置密码
-		jedis.auth("admin");		
+		jedis.auth("admin");	    // 设置密码
 	}
 	
 	//演示sadd smembers
@@ -30,17 +28,17 @@ public class JedisDemo5 {
 		System.out.println(smembers);
 	}
 	
-	//演示srem
+
 	@Test
-	public void test2(){
+	public void test2(){	                     //srem
 		jedis.srem("language1", "java");
 		Set<String> smembers = jedis.smembers("language1");
 		System.out.println(smembers);
 	}
 	
-	//差集 sdiff
+
 	@Test
-	public void test3(){
+	public void test3(){	                     //差集 sdiff
 		jedis.sadd("language1","java","c++","ruby","python");
 		jedis.sadd("language2","ios","c++","c#","android");
 		
@@ -48,18 +46,18 @@ public class JedisDemo5 {
 		System.out.println(sdiff);
 	}
 	
-	//交集
+
 	@Test
-	public void test4(){
+	public void test4(){	                     //交集
 		jedis.sadd("language1","java","c++","ruby","python");
 		jedis.sadd("language2","ios","c++","c#","android");
 		Set<String> sinter = jedis.sinter("language1","language2");
 		System.out.println(sinter);
 	}
 	
-	//并集
+
 	@Test
-	public void test5(){
+	public void test5(){	                     //并集
 		jedis.sadd("language1","java","c++","ruby","python");
 		jedis.sadd("language2","ios","c++","c#","android");
 		Set<String> sunion = jedis.sunion("language1","language2");
