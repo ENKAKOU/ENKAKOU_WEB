@@ -17,7 +17,6 @@ public class JedisDemo4 {                     //hash操作
 	@Before
 	public void createJedis() {
 		jedis = new Jedis("192.168.19.128");
-
 		jedis.auth("admin");          //设置密码
 	}
 
