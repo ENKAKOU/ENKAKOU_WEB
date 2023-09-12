@@ -6,15 +6,14 @@ import java.lang.reflect.Proxy;
 
 //可以得到代理对象的工具类
 public class ProxyBuilder implements InvocationHandler {
-    // 目标对象
-    private Object target;
+    private Object target;               //目标对象
 
     public ProxyBuilder(Object target) {
         this.target = target;
     }
 
-    // 作用:创建代理对象
-    public Object createProxy() {
+
+    public Object createProxy() {        // 作用:创建代理对象
         ClassLoader loader = target.getClass().getClassLoader();
         Class[] interfaces = target.getClass().getInterfaces();
         return Proxy.newProxyInstance(loader, interfaces, this);
@@ -29,11 +28,9 @@ public class ProxyBuilder implements InvocationHandler {
 
         // 在调用前，得到一个时间
         long l1 = System.currentTimeMillis();
-
-        Object returnValue = method.invoke(target, args);// 调用目标行为
+        Object returnValue = method.invoke(target, args);             // 调用目标行为
 
         long l2 = System.currentTimeMillis();
-
         System.out.println("目标行为执行时间:"+(l2 - l1));
 
         return returnValue;
