@@ -11,21 +11,18 @@ import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Tuple;
 
-//sortedset操作
-public class JedisDemo6 {
+public class JedisDemo6 {                     //sortedset操作
 	Jedis jedis;
 
 	@Before
 	public void createJedis() {
 		jedis = new Jedis("192.168.19.128");
-		// 设置密码
-		jedis.auth("admin");
-
+		jedis.auth("admin");		// 设置密码
 	}
 
-	// 演示zadd zrange zrangeByScore
+	
 	@Test
-	public void test1() {
+	public void test1() {	              //zadd zrange zrangeByScore
 		Map<String, Double> sm = new HashMap<String, Double>();
 		sm.put("张三", 70.0);
 		sm.put("李四", 80.0);
@@ -40,9 +37,9 @@ public class JedisDemo6 {
 		System.out.println(set1);
 	}
 
-	// 获取分数元素 zrangeWithScores
+
 	@Test
-	public void test2() {
+	public void test2() {	              //获取分数元素 zrangeWithScores
 		Map<String, Double> sm = new HashMap<String, Double>();
 		sm.put("张三", 70.0);
 		sm.put("李四", 80.0);
@@ -56,9 +53,9 @@ public class JedisDemo6 {
 		}
 	}
 
-	// zrank
+
 	@Test
-	public void test3() {
+	public void test3() {	              //zrank
 		Map<String, Double> sm = new HashMap<String, Double>();
 		sm.put("张三", 70.0);
 		sm.put("李四", 80.0);
@@ -70,9 +67,9 @@ public class JedisDemo6 {
 		System.out.println(num);
 	}
 
-	// zscore
+
 	@Test
-	public void test4() {
+	public void test4() {	              //zscore
 		Map<String, Double> sm = new HashMap<String, Double>();
 		sm.put("张三", 70.0);
 		sm.put("李四", 80.0);
@@ -83,9 +80,9 @@ public class JedisDemo6 {
 		System.out.println(zscore);
 	}
 
-	// zrem
+
 	@Test
-	public void test5() {
+	public void test5() {	              //zrem
 		Map<String, Double> sm = new HashMap<String, Double>();
 		sm.put("张三", 70.0);
 		sm.put("李四", 80.0);
