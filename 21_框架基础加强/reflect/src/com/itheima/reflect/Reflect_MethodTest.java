@@ -10,13 +10,12 @@ public class Reflect_MethodTest {
 	// 获取Method对象
 	@Test
 	public void test1() {
-
-		// 1.获取User类Class
-		Class clazz = User.class;
+		
+		Class clazz = User.class;		// 1.获取User类Class
 
 		// 2.获取Method对象
-		// Method[] methods = clazz.getMethods(); //它获取所有方法，包含父中继承过来的
-		Method[] methods = clazz.getDeclaredMethods(); // 它只获取本类中所拥有的方法
+		// Method[] methods = clazz.getMethods();                    //它获取所有方法，包含父中继承过来的
+		Method[] methods = clazz.getDeclaredMethods();               // 它只获取本类中所拥有的方法
 		for (Method m : methods) {
 			System.out.println(m.getName());
 		}
@@ -44,14 +43,11 @@ public class Reflect_MethodTest {
 		String st = user.sayHello("fox");
 		// System.out.println(st);
 
-		// 1.获取sayHello方法的Method对象
-		Class clazz = user.getClass();
+		Class clazz = user.getClass();		// 1.获取sayHello方法的Method对象
 
-		// 2.获取Method对象
-		Method method = clazz.getMethod("sayHello", String.class);
+		Method method = clazz.getMethod("sayHello", String.class);		// 2.获取Method对象
 
-		// 3.让方法执行
-		Object invoke = method.invoke(user, "fox");
+		Object invoke = method.invoke(user, "fox");		// 3.让方法执行
 
 		System.out.println(invoke);
 	}
@@ -63,21 +59,20 @@ public class Reflect_MethodTest {
 		Class clazz = User.class;
 
 		// 得到sum方法
-		Method method = clazz.getMethod("sum"); // 注意sum是一个静态方法
-
+		Method method = clazz.getMethod("sum");                // 注意sum是一个静态方法
 		method.invoke(null);
 	}
 
 	// 调用参数是数组类型的方法
 	@Test
-	public void test5() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+	public void test5() throws NoSuchMethodException, SecurityException, IllegalAccessException, 
+	                           IllegalArgumentException, InvocationTargetException {
 		Class clazz = User.class;
 
-		// 得到sum方法
-		Method method = clazz.getMethod("sum",Integer[].class); 
+		Method method = clazz.getMethod("sum",Integer[].class); 		// 得到sum方法
+	
+		Integer[] args={1,2,3,4};		//执行sum方法
 		
-		//执行sum方法
-		Integer[] args={1,2,3,4};
 		//解决方案一:将args直接强制转换成Object在传递		
 		//method.invoke(null, ((Object)args));		
 		//解决方案二:在args这个数组外层在包装一层数组
