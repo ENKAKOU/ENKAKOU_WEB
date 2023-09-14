@@ -11,24 +11,22 @@ public class JdbcUtils {
 	@JdbcProperty(driverClass = "com.mysql.jdbc.Driver", url = "jdbc:mysql:///exam", user = "root", password = "abc")
 	public static Connection getConnection()
 			throws ClassNotFoundException, SQLException, NoSuchMethodException, SecurityException {
-		// 问题:如何得到方法上的注解的属性值---结合反射来完成
-		// 1.得到当前类的Class
-		Class clazz = JdbcUtils.class;
-		// 2.得到getConnection方法的Method对象
-		Method method = clazz.getDeclaredMethod("getConnection");
+				
+		// 如何得到方法上的注解的属性值---结合反射来完成
+		Class clazz = JdbcUtils.class;		// 1.得到当前类的Class
 
-		// 3.得到方法上的Annotation
-		JdbcProperty jp = (JdbcProperty) method.getAnnotation(JdbcProperty.class);
+		Method method = clazz.getDeclaredMethod("getConnection");		// 2.得到getConnection方法的Method对象
+
+		JdbcProperty jp = (JdbcProperty) method.getAnnotation(JdbcProperty.class);		// 3.得到方法上的Annotation
 
 		String driverClass = jp.driverClass();
 		String url = jp.url();
 		String user = jp.user();
 		String password = jp.password();
-		// 1.加载驱动
-		Class.forName(driverClass);
 
-		// 2.获取Connection
-		Connection con = DriverManager.getConnection(url, user, password);
+		Class.forName(driverClass);		// 1.加载驱动
+
+		Connection con = DriverManager.getConnection(url, user, password);		// 2.获取Connection
 
 		return con;
 	}
