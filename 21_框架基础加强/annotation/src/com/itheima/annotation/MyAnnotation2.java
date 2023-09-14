@@ -9,6 +9,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE,ElementType.METHOD})
 @Documented
+	
 public @interface MyAnnotation2 {
 
 	String[] value() ;
