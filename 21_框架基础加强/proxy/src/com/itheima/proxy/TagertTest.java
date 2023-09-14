@@ -18,15 +18,11 @@ public class TagertTest {
 	// 通过代理来访问
 	@Test
 	public void test2() {
+		ITarget target = new Target();		// 1.创建目标
 
-		// 1.创建目标
-		ITarget target = new Target();
+		ITarget targetProxy = new TargetProxy(target);		// 2.创建代理
 
-		// 2.创建代理
-		ITarget targetProxy = new TargetProxy(target);
-
-		// 3.通过代理来调用目标
-		targetProxy.show();
+		targetProxy.show();		// 3.通过代理来调用目标
 	}
 
 	// 使用jdk提供的Proxy类来完成动态代理
@@ -36,7 +32,8 @@ public class TagertTest {
 		final ITarget target = new Target();
 		
 		//2.使用Proxy的newProxyInstance方法来完成代理对象创建
-		ITarget targetProxy=(ITarget) Proxy.newProxyInstance(target.getClass().getClassLoader(),target.getClass().getInterfaces(),new InvocationHandler() {
+		ITarget targetProxy=(ITarget) Proxy.newProxyInstance(target.getClass().getClassLoader(),
+								     target.getClass().getInterfaces(),new InvocationHandler() {
 			
 			@Override
 			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
