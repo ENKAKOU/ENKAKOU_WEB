@@ -33,16 +33,16 @@ public class Reflect_Test {
 		// 1.得到Person类的Class
 		Class clazz = Class.forName("com.itheima.reflect.Person");
 		Object obj = clazz.newInstance();
+
+		Method[] methods = clazz.getDeclaredMethods();		//2.得到Person类中的方法
 		
-		//2.得到Person类中的方法
-		Method[] methods = clazz.getDeclaredMethods();
-		
-		//3.遍历map
-		for(String key:map.keySet()){
+		for(String key:map.keySet()){		                //3.遍历map
 			//将所有的key前面添加上set，与方法的名称不区分大小写来对比。
-			String methodName="set"+key; //操作的方法
+			String methodName="set"+key;                     //操作的方法
+			
 			for(Method method:methods){
 				String mname=method.getName();
+				
 				if(methodName.equalsIgnoreCase(mname)){
 					method.invoke(obj, map.get(key));
 				}
@@ -63,19 +63,19 @@ public class Reflect_Test {
 		map.put("sex", "男");
 		map.put("address", "北京");
 
-		// 1.得到Person类的Class
-		Class clazz = Class.forName("com.itheima.reflect.Person");
-		Object obj = clazz.newInstance();
-		// 2.得到Person类的所有属性
-		Field[] fds = clazz.getDeclaredFields();
-		// 3.得到map中所有的key
-		Set<String> keys = map.keySet();
-		for (Field f : fds) {
-			String field_name = (f.getName()); // 得到属性名称
 
-			if (keys.contains(field_name)) { // map的key中包含了Person类的属性
-				// 4.将key对应的value赋值给属性
-				f.setAccessible(true);
+		Class clazz = Class.forName("com.itheima.reflect.Person");		// 1.得到Person类的Class
+		Object obj = clazz.newInstance();
+
+		Field[] fds = clazz.getDeclaredFields();		  // 2.得到Person类的所有属性
+
+		Set<String> keys = map.keySet();		          // 3.得到map中所有的key
+		for (Field f : fds) {
+			String field_name = (f.getName());                // 得到属性名称
+
+			if (keys.contains(field_name)) {                  // map的key中包含了Person类的属性
+
+				f.setAccessible(true);			  // 4.将key对应的value赋值给属性
 				f.set(obj, map.get(field_name));
 			}
 		}
