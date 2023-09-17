@@ -3,16 +3,17 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>首页</title>
+		<title>注册页面</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
 		<!--base文件，放置公用样式-->
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/register.css" />
 		<!--**.css文件，本页面专用样式-->
 	</head>
 
 	<body>
+
 		<!--nav-->
 		<!--navTop-->
 		<nav class="navbar navbar-inverse" role="navigation">
@@ -69,80 +70,72 @@
 				</div>
 			</div>
 		</nav>
-		<!--main-->
-		<section class="container-fluid">
-			<div class="IndexContent">
-				<!--banner-->
-				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators">
-				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>			    
-				  </ol>
-				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner" role="listbox">
-				    <div class="item active">
-				      <img src="img/banner/01.png"  />   
-				    </div>
-				    <div class="item">
-				      <img src="img/banner/02.png" />
-				    </div>
-				    <div class="container">	 
-				  	<div class="warn col-xs-6 col-md-4 col-md-offset-12">
-				  		<h4>欢迎来到P2P个人理财平台 </h4>
-				  		<button class="btn btn-info">注册领红包</button>
-				  	</div>			 
-				</div>
-				    
-				  </div>
-				  <!--control-->
-				  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left"></span>
-				    <span class="sr-only">Previous</span>
-				  </a>
-				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right"></span>
-				    <span class="sr-only">Next</span>
-				  </a>
-				
-				</div>
-				<!--intro-->
-				<div class="container">
-					<div class="row intro">
-						<div class="col-xs-6 col-md-3 item">
-							<h3>安全</h3>
-							<p>国家AAA信用平台</p>
-							<p>民生银行资金托管</p>
-						</div>
-						<div class="col-xs-6 col-md-3 item">
-							<h3>权威</h3>
-							<p>CCTV多次点赞</p>
-							<p>互联网百强企业</p>
-						</div>
-						<div class="col-xs-6 col-md-3 item">
-							<h3>省心</h3>
-							<p>本金保障计划</p>
-							<p>一站式财富管理平台</p>
-						</div>
-						<div class="col-xs-6 col-md-3 item">
-							<h3>灵活</h3>
-							<p>100元起投</p>
-							<p>3个月可债权转让</p>
-						</div>
+		<!--Main-->
+		<section class="container">
+			<div class="registerArea">
+				<div class="row">
+					<div class="col-md-8 Content">
+						<h4><strong>账号注册-基本信息</strong></h4>
+						<form class="form-horizontal" role="form" method="post" id="regform">
+							<div  class="form-group"> 
+								<label for="inputuser" class="col-sm-2 control-label">用户名:<i>*</i></label>
+								<div class="col-sm-10">
+								<input type="text"  class="form-control" name="userName" validate='[{"type":"notNull","msg":"用户名不能为空！"},{"type":"regex","reg":"^[a-zA-Z]{1}[a-zA-Z0-9]{2,9}$","msg":"用户名必须是字母开头并且不能少于3位不能多余10位"}]' />
+								</div>
+							</div>
+							<div  class="form-group"> 
+								<label for="inputuser" class="col-sm-2 control-label">手机号码:<i>*</i></label>
+								<div class="col-sm-10">
+								<input type="text" name="phone" class="form-control" validate='[{"type":"regex","reg":"^(1+[34578][0-9]{9})$","msg":"手机号码不符合规范!"}]' />
+								</div>
+							</div>
+							<div  class="form-group"> 
+								<label for="inputuser" class="col-sm-2 control-label">密码:<i>*</i></label>
+								<div class="col-sm-10">
+								<input type="password" name="password"  class="form-control"  validate='[{"type":"notNull","msg":"密码不能为空！"}]' id="password" />
+								</div>
+							</div>
+							<div   class="form-group"> 
+								<label for="inputuser" class="col-sm-2 control-label">确认密码:<i>*</i></label>
+								<div class="col-sm-10">
+								<input type="password"   class="form-control" validate='[{"type":"notNull","msg":"确认密码不能为空！"},{"type":"equalTo","target":"#password","msg":"确认密码不一致"}]' name="confirmPassword" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<div class="checkbox">
+										<label>
+						          <input type="checkbox"> 我同意《服务协议》
+						        </label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-block btn-info">注册</button>
+								</div>
+							</div>
+						</form>
 					</div>
-					<div class="buy">
-						<button class="btn btn-info">理财购买</button>
+					<div class="col-md-4 Link">
+						<h4>已注册？现在就登录</h4>
+						<img src="img/regist/reg_img.jpg" />
 					</div>
 				</div>
 			</div>
-		
+
 		</section>
-		
+
 		<footer class="navbar-inverse"></footer>
-		
+
 		<script type="text/javascript" src="js/jquery.1.9.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		
+		<script type="text/javascript" src="js/jquery.validate.js"></script>
+		<script type="text/javascript">
+			$(function() {				
+				$("#regform").validate();
+			});
+		</script>
 	</body>
 
 </html>
